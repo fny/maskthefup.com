@@ -66,11 +66,53 @@ title: MASK THE F UP!
 <meta name="theme-color" content="#ffffff">
 <style>
     .fb-share-button {
-        top: -9px !important;
+        top: -8px !important;
     }
     header#masthead {
         position: fixed !important;
     }
+    .script.mask-the-fup-neighbors {
+        font-size: 2.5em;
+    }
+    @media screen and (max-width: 600px) {
+        .mobile-nav-spacer {
+            height: 150px;
+            width: 100%;
+        }
+        .title.uppercase.mask-the-fup {
+            font-size: 4em !important;
+        }
+        .script.mask-the-fup-neighbors {
+            font-size: 1em;
+        }
+    }
+
+.video-link {
+  position: relative;
+  float: left;
+}
+
+.video-link:after, .video-link:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .video-link:after {
+    width: 0;
+    height: 0;
+    border: 16px solid transparent;
+    border-left: 20px solid #fff;
+    margin-top: -18px;
+    margin-left: -7px;
+    -webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.25));
+  }
+  .video-link:hover:before, .video-link:hover:after {
+      display: none;
+  }
+
+
+
 </style>
 </head>
 <body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
@@ -120,12 +162,14 @@ title: MASK THE F UP!
             <!-- Fullscreen Hero
                 ======================================= -->
             <div class="image-bg d-flex" style="height:70vh">
+                
                 <!-- hero caption -->
                 <div class="container align-self-center dark-bg">
+                    <div class="mobile-nav-spacer"></div>
                     <div class="section-title text-center">
                         <!-- <h3 class="title uppercase primary-outline display-3 aos-init aos-animate" data-aos="fade-down" data-aos-delay="100">Build your beautiful website today</h3> -->
-                        <h2 class="title uppercase font-weight-700 text-lg aos-init aos-animate marker" data-aos="fade-in">MASK THE F%*$ UP!</h2>
-                        <p data-aos="fade-up" data-aos-delay="200" class="aos-init aos-animate script" style="font-size: 2.5em;">
+                        <h2 class="title uppercase font-weight-700 text-lg aos-init aos-animate marker mask-the-fup" data-aos="fade-in">MASK THE F%*$ UP!</h2>
+                        <p data-aos="fade-up" data-aos-delay="200" class="aos-init aos-animate script mask-the-fup-neighbors">
                             a friendly reminder from your neighbors and <a href="https://supplyhawk.org">supplyhawk.org</a><br />
                             <span id="social-header" class="hide"></span>
                             <div class="fb-share-button" data-href="https://maskthefup.com" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaskthefup.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
@@ -174,7 +218,7 @@ title: MASK THE F UP!
 
                             {% for video in site.data.videos %}
                             <li class="project-post {{video.category}}">
-                            <div class="post-image">
+                            <div class="post-image video-link">
                                 <a href="//www.youtube.com/watch?v={{video.youtube_id}}" title="Watch YouTube Video" data-lity>
 
                                 {% if video.image_id == nil or video.image_id == "" %}
