@@ -1,0 +1,81 @@
+/* primary color as text*/
+a:hover,
+.widget-categories li a:hover,
+header#masthead #site-navigation ul li.has-children ul li a:hover,
+#site-navigation ul li.active > a,#site-navigation ul li:not(.active) a span:after,
+.primary-color,
+.portfolio-filters li a:hover,
+a.read-more:hover,
+.blog-grid .entry-header a:hover,
+#post-nav li a:hover,
+.posts-pagination ul li a:hover,
+.site-social a span.back,
+#contact-form label.error,
+.contact-info a:hover,
+.gt-card .card-header button:not(.collapsed),
+.gt-tabs .nav a.active,
+.portfolio-filters li a.selected,
+.twt-feed-widget li:before,
+#site-navigation ul li.has-children ul:before{
+	color:#ffd300 !important;
+}
+
+.primary-fill, svg.primary-fill g,
+#cursor.is-hover #main-cursor{
+	fill:#ffd300 !important;
+}
+
+/* primary color used as element background */
+.primary-el-bg,
+.portfolio-filters li a .filter-bg:before,
+.portfolio-grid:not(.style-alt) .project-post .entry-meta,
+.portfolio-grid.style-alt .project-post .entry-meta:before,
+blockquote.large-quote cite:before,
+blockquote.large-quote cite:after,
+.pricing-table.featured:before,
+.bullet-list li:before,
+.gt-carousel .owl-dots button.active,
+.skill-perc,
+.project-post-header .entry-meta .cat a{
+	background:#ffd300 !important;
+}
+
+/* text color on primary bg */
+.primary-el-bg,
+.meta-holder *,
+.project-post-header .entry-meta .cat a{
+	color:#000 !important;
+}
+
+/* primary color as element border */
+.primary-border,
+.primary-outline,
+.form-control:focus,
+#aside-sidebar,
+.posts-pagination ul li a:hover,.posts-pagination ul li.active a,
+#site-navigation ul li.has-children ul,
+#blog-single .entry-content blockquote, blockquote.classic-blockquote{
+	border-color:#ffd300 !important;
+}
+
+
+/* Primary color as section background */
+.primary-bg{
+	background-color:#0c0c0c  !important;
+}
+
+/* primary button */
+.gt-btn.primary-btn{
+	color:#fff !important;
+	background:#ffd300 !important;
+}
+
+
+/* primary button hover */
+.gt-btn:hover,
+.posts-pagination ul li.active a,
+.gt-carousel .owl-nav > div:hover,
+.slides-navigation a:hover{
+	color:#000 !important;
+	background:#ffd300 !important;
+}
