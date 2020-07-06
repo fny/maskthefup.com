@@ -37,8 +37,61 @@ title: MASK THE F UP!
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var lazyloadImages;    
+    
+      if ("IntersectionObserver" in window) {
+        lazyloadImages = document.querySelectorAll(".lazy");
+        var imageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var image = entry.target;
+              image.classList.remove("lazy");
+              imageObserver.unobserve(image);
+            }
+          });
+        });
+    
+        lazyloadImages.forEach(function(image) {
+          imageObserver.observe(image);
+        });
+      } else {  
+        var lazyloadThrottleTimeout;
+        lazyloadImages = document.querySelectorAll(".lazy");
+        
+        function lazyload () {
+          if(lazyloadThrottleTimeout) {
+            clearTimeout(lazyloadThrottleTimeout);
+          }    
+    
+          lazyloadThrottleTimeout = setTimeout(function() {
+            var scrollTop = window.pageYOffset;
+            lazyloadImages.forEach(function(img) {
+                if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                  img.src = img.dataset.src;
+                  img.classList.remove('lazy');
+                }
+            });
+            if(lazyloadImages.length == 0) { 
+              document.removeEventListener("scroll", lazyload);
+              window.removeEventListener("resize", lazyload);
+              window.removeEventListener("orientationChange", lazyload);
+            }
+          }, 20);
+        }
+    
+        document.addEventListener("scroll", lazyload);
+        window.addEventListener("resize", lazyload);
+        window.addEventListener("orientationChange", lazyload);
+      }
+    })
+    </script>
 <style type="text/css">
+    .lazy-image {
+    background-image: none;
+    background-color: #F1F1FA;
+    }
     .script {
         font-family: 'Caveat', cursive;
     }
@@ -178,9 +231,9 @@ title: MASK THE F UP!
                                 <a href="//www.youtube.com/watch?v={{video.youtube_id}}" title="Watch YouTube Video" data-lity>
 
                                 {% if video.image_id == nil or video.image_id == "" %}
-                                    <div class="post-image-image" style="background-image:url(http://i3.ytimg.com/vi/{{video.youtube_id}}/hqdefault.jpg"></div>
+                                    <div class="post-image-image lazy-image" style="background-image:url(http://i3.ytimg.com/vi/{{video.youtube_id}}/hqdefault.jpg"></div>
                                 {% else %}
-                                    <div class="post-image-image" style="background-image:url(/images/video-thumbs/{{video.image_id}}.jpg)"></div>
+                                    <div class="post-image-image lazy-image" style="background-image:url(/images/video-thumbs/{{video.image_id}}.jpg)"></div>
                                 {% endif %}
                                 <div class="entry-meta">
                                     <div class="meta-holder">
@@ -452,7 +505,7 @@ title: MASK THE F UP!
                             <li class="project-post">
                                 <div class="post-image">
                                     <a href="{{ image.path }}" title="View Image" data-lity>
-                                        <div class="post-image-image" style="background-image:url({{ image.path }}"></div>
+                                        <div class="post-image-image lazy-image" style="background-image:url({{ image.path }}"></div>
                                     </a>
                                 </div>
                             </li>
