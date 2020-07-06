@@ -18,17 +18,8 @@ title: MASK THE F UP!
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <title>MASK THE F UP!</title>
-<!-- Noyre Fonts -->
-<link href="/css/fonts.css" rel="stylesheet">
-<!-- Noyre CSS -->
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/gt.min.css">
-<link rel="stylesheet" href="/css/site.min.css">
-<link rel="stylesheet" href="/css/responsive.min.css">
-<link id="color-scheme" rel="stylesheet" href="/css/color-yellow.css">
-<link rel="stylesheet" href="/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/lity.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Permanent+Marker&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -37,98 +28,15 @@ title: MASK THE F UP!
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var lazyloadImages;    
-    
-      if ("IntersectionObserver" in window) {
-        lazyloadImages = document.querySelectorAll(".lazy");
-        var imageObserver = new IntersectionObserver(function(entries, observer) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              var image = entry.target;
-              image.classList.remove("lazy");
-              imageObserver.unobserve(image);
-            }
-          });
-        });
-    
-        lazyloadImages.forEach(function(image) {
-          imageObserver.observe(image);
-        });
-      } else {  
-        var lazyloadThrottleTimeout;
-        lazyloadImages = document.querySelectorAll(".lazy");
-        
-        function lazyload () {
-          if(lazyloadThrottleTimeout) {
-            clearTimeout(lazyloadThrottleTimeout);
-          }    
-    
-          lazyloadThrottleTimeout = setTimeout(function() {
-            var scrollTop = window.pageYOffset;
-            lazyloadImages.forEach(function(img) {
-                if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                  img.src = img.dataset.src;
-                  img.classList.remove('lazy');
-                }
-            });
-            if(lazyloadImages.length == 0) { 
-              document.removeEventListener("scroll", lazyload);
-              window.removeEventListener("resize", lazyload);
-              window.removeEventListener("orientationChange", lazyload);
-            }
-          }, 20);
-        }
-    
-        document.addEventListener("scroll", lazyload);
-        window.addEventListener("resize", lazyload);
-        window.addEventListener("orientationChange", lazyload);
-      }
-    })
-    </script>
-<style type="text/css">
-    .lazy-image {
-    background-image: none;
-    background-color: #F1F1FA;
+<style>
+    .fb-share-button {
+        top: -8px !important;
     }
-    .script {
-        font-family: 'Caveat', cursive;
-    }
-    .marker {
-        font-family: 'Permanent Marker', cursive;
-
-    }
-    a {
-        color: #ffd300 !important;
-    }
-    a:hover {
-        color: #fff !important;
-    }
-    .site-branding a {
-        font-family: "Permanent Marker";
-    }
-    p {
-        color: #fff !important;
-    }
-
-    .cat a {
-        color: #000 !important;
-        /* background: #ffd300; */
-    }
-
-    .post-image-image {
-                            height: 200px;
-                            width: 200px;
-                            background-position: center;
-                            background-size: cover; 
-                            background-repeat: no-repeat;
-                            padding: 0;
-                            margin: auto;
-                        }
 </style>
 </head>
 <body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="akGQsQIG"></script>
 <!-- Page Wrapper
     ======================================= -->
 <div id="page" class="site">
@@ -138,11 +46,7 @@ title: MASK THE F UP!
         <header id="masthead" class="site-header">
             <div class="container header-container">
                 <!-- LOGO -->
-                <div class="site-branding">
-                    <a href="/" rel="home">
-                        MASK THE F*%$ UP!
-                    </a>
-                </div>
+                <div class="site-branding"><a href="/" rel="home">MASK THE F*%$ UP!</a></div>
                 <!-- MAIN NAVIGATION
                         ======================================= -->
                 <nav id="site-navigation" class="main-navigation">
@@ -151,7 +55,7 @@ title: MASK THE F UP!
                         <a href="#videos" class="on-page"><span data-background-text="videos">Videos</span></a>
                     </li>
                     <li>
-                        <a href="#myths" class="on-page"><span data-background-text="debunked">Myths</span></a>
+                        <a href="#myths" class="on-page"><span data-background-text="myths">Myths</span></a>
                     </li>
                     <li>
                         <a href="#memes" class="on-page"><span data-background-text="memes">Memes</span></a>
@@ -160,9 +64,8 @@ title: MASK THE F UP!
                         <a href="#research" class="on-page"><span data-background-text="papers">Research</span></a>
                     </li>
                     <li>
-                        <a href="#which-mask" class="on-page"><span data-background-text="Medical!">Which Masks?</span></a>
+                        <a href="#which-mask" class="on-page"><span data-background-text="medical!">Which Masks?</span></a>
                     </li>
-
                 </ul>
                 </nav>
                 <!-- mobile navigation -->
@@ -177,16 +80,18 @@ title: MASK THE F UP!
         <div class="site-page">
             <!-- Fullscreen Hero
                 ======================================= -->
-            <div class="image-bg d-flex" style="height:50vh">
+            <div class="image-bg d-flex" style="height:70vh">
                 <!-- hero caption -->
                 <div class="container align-self-center dark-bg">
                     <div class="section-title text-center">
                         <!-- <h3 class="title uppercase primary-outline display-3 aos-init aos-animate" data-aos="fade-down" data-aos-delay="100">Build your beautiful website today</h3> -->
                         <h2 class="title uppercase font-weight-700 text-lg aos-init aos-animate marker" data-aos="fade-in">MASK THE F%*$ UP!</h2>
                         <p data-aos="fade-up" data-aos-delay="200" class="aos-init aos-animate script" style="font-size: 2.5em;">
-                            a friendly reminder from your neighbors and <a style="color:#ffd300" href="https://supplyhawk.org">supplyhawk.org</a>
+                            a friendly reminder from your neighbors and <a href="https://supplyhawk.org">supplyhawk.org</a><br />
+                            <div class="fb-share-button" data-href="https://maskthefup.com" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaskthefup.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            
+                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
                         </p>
-                        <!-- <a href="#" class="open-contact gt-btn primary-btn alt-font js-tilt"><span class="uppercase">Get in touch</span></a> -->
                     </div>
                 </div>
                 <!-- background image -->
@@ -469,7 +374,7 @@ title: MASK THE F UP!
                             <p class="heading-font uppercase font-weight-700 aos-init" data-aos="fade-in">
                                 For the First Time in History, You Can Save Humanity By Watching The TV And Doing Nothing
                             </p>
-                            <cite class="alt-font uppercase">AND WEARING A DAMN MASK IF NEED TO YOU GO OUT</cite>
+                            <cite class="alt-font uppercase">AND WEARING A DAMN MASK IF NEED TO GO OUT</cite>
                         </blockquote>
                     </div>
                 </div>
@@ -534,6 +439,10 @@ title: MASK THE F UP!
                     <div class="text-center aos-init" data-aos="fade-in">
                         <a href="https://supplyhawk.org/products/level-2-fluid-protection-procedure-mask" class="open-contact gt-btn primary-btn btn-lg alt-font uppercase" style="color: black !important">Buy Now</a>
                     </div>
+                    <p class="text-center">
+                        <br />
+                        Our masks are also available on <a href="https://www.amazon.com/Disposable-Face-Level-Fluid-Resistance/dp/B08BQVKMWT/">Amazon</a> and <a href="https://www.walmart.com/ip/3-Ply-Face-Mask-with-ASTM-Level-2-Fluid-Resistance-50-Masks/405320288">Walmart.com</a>!
+                    </p>
                 </div>
             </div>
 
@@ -580,7 +489,9 @@ title: MASK THE F UP!
         ======================================= -->
     <footer class="site-footer black-bg dark-bg">
     <div class="container container-lg aos-init" data-aos="fade-in" data-aos-delay="100">
+        
         <div class="widget">
+            <p style="text-align: center;">Congrats for getting to the end! Your reward?  <a href="https://supplyhawk.org">Use discount code STOPTHESPIKE when ordering for a huge discount!</a></p>
             <!-- contact info -->
             <div class="contact-info text-center alt-font uppercase">
                 <a href="https://supplyhawk.org"><span class="heading-font">Visit Us Online</span>supplyhawk.org</a>
@@ -603,6 +514,14 @@ title: MASK THE F UP!
                 <a href="https://supplyhawk.org">
                 <span class="front">YouTube</span>
                 <span class="back"><span>YouTube</span></span>
+                </a>
+                <a href="https://www.walmart.com/ip/3-Ply-Face-Mask-with-ASTM-Level-2-Fluid-Resistance-50-Masks/405320288">
+                    <span class="front">Walmart</span>
+                    <span class="back"><span>Walmart</span></span>
+                </a>
+                <a href="https://www.amazon.com/Disposable-Face-Level-Fluid-Resistance/dp/B08BQVKMWT/">
+                    <span class="front">Amazon</span>
+                    <span class="back"><span>Amazon</span></span>
                 </a>
                 <a href="https://supplyhawk.org/products/level-2-fluid-protection-procedure-mask">
                 <span class="front">Buy Now</span>
@@ -629,10 +548,7 @@ title: MASK THE F UP!
 
 <!-- Page Scripts
     ======================================= -->
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 <script src="/js/plugins.js"></script>
 <script src="/js/site.js"></script>
-<script src="/js/lity.min.js"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body></html>
