@@ -127,7 +127,7 @@ title: MASK THE F UP!
                 <nav id="site-navigation" class="main-navigation">
                 <ul id="primary-menu" class="menu alt-font">
                     <li>
-                        <a href="#videos" class="on-page"><span data-background-text="videos">Videos</span></a>
+                        <a href="#videos" class="on-page" style="display:none;"><span data-background-text="videos">Videos</span></a>
                     </li>
                     <li>
                         <a href="#myths" class="on-page"><span data-background-text="myths">Myths</span></a>
@@ -139,7 +139,7 @@ title: MASK THE F UP!
                         <a href="#research" class="on-page"><span data-background-text="papers">Research</span></a>
                     </li>
                     <li>
-                        <a href="#which-mask" class="on-page"><span data-background-text="medical!">Which Masks?</span></a>
+                        <a href="#which-mask" class="on-page" style="display:none;"><span data-background-text="medical!">Which Masks?</span></a>
                     </li>
                 </ul>
                 </nav>
@@ -164,7 +164,7 @@ title: MASK THE F UP!
                         <!-- <h3 class="title uppercase primary-outline display-3 aos-init aos-animate" data-aos="fade-down" data-aos-delay="100">Build your beautiful website today</h3> -->
                         <h2 class="title uppercase font-weight-700 text-lg aos-init aos-animate marker mask-the-fup" data-aos="fade-in">MASK THE F%*$ UP!</h2>
                         <p data-aos="fade-up" data-aos-delay="200" class="aos-init aos-animate script mask-the-fup-neighbors">
-                            a friendly reminder from your neighbors and <a href="https://supplyhawk.org">supplyhawk.org</a>
+                            a friendly reminder from your neighbors <span style="display:none;">and <a href="https://supplyhawk.org">supplyhawk.org</a></span>
                         </span>
                         </p>
                     </div>
@@ -182,26 +182,26 @@ title: MASK THE F UP!
             <div id="videos" class="page-section black-bg dark-bg p-medium">
                 <div class="container">
                     <!-- section title -->
-                    <div class="section-title">
+                    <div class="section-title" style="display:none;">
                         <h5 class="sub-title uppercase dark-fill primary-el-bg">WATCH NOW</h5>
                         <h2 class="title uppercase font-weight-700">TOP VIDEOS</h2>
                         <p>
                             Videos from antimaskers, debunkers, physicians and the news about why you should <a href="https://twitter.com/hashtag/MASKUP" target="_blank">#MaskUp</a>
                         </p>
                     </div>
-                    <div class="lg-clear-10">
+                    <div class="lg-clear-10" style="display:none;">
                     </div>
-                    <div class="xs-clear-10 xl-clear-25">
+                    <div class="xs-clear-10 xl-clear-25" style="display:none;">
                     </div>
                     <!-- portfolio items -->
-                    <ul id="portfolio-filters" class="portfolio-filters alt-font uppercase">
+                    <ul id="portfolio-filters" class="portfolio-filters alt-font uppercase" style="display:none;">
                         <li><a href="#" data-filter="*" class="selected"><span>All</span><span class="filter-bg"></span></a></li>
                         <li><a href="#" data-filter=".antimaskers" class=""><span>Antimaskers</span><span class="filter-bg"></span></a></li>
                         <li><a href="#" data-filter=".debunking" class=""><span>Debunking</span><span class="filter-bg"></span></a></li>
                         <li><a href="#" data-filter=".experts" class=""><span>Experts</span><span class="filter-bg"></span></a></li>
                         <li><a href="#" data-filter=".ads" class=""><span>Ads/PSAs</span><span class="filter-bg"></span></a></li>
                     </ul>
-                    <div id="portfolio-grid" class="portfolio-grid aos-init" data-aos="fade-in">
+                    <div id="portfolio-grid" class="portfolio-grid aos-init" data-aos="fade-in" style="display:none;">
                         <ul class="gt-grid xs-grid-cols-1 md-grid-cols-3 lg-grid-cols-4 mb-0">
                             <!-- post 1 -->
                             <!-- add data-filters as classes for isotope filtering -->
@@ -212,7 +212,7 @@ title: MASK THE F UP!
                                 <a href="//www.youtube.com/watch?v={{video.youtube_id}}" title="Watch YouTube Video" data-lity>
 
                                 {% if video.image_id == nil or video.image_id == "" %}
-                                    <div class="post-image-image lazy" data-bg="http://i3.ytimg.com/vi/{{video.youtube_id}}/hqdefault.jpg"></div>
+                                    <div class="post-image-image lazy" data-bg="//i3.ytimg.com/vi/{{video.youtube_id}}/mqdefault.jpg"></div>
                                 {% else %}
                                     <div class="post-image-image lazy" data-bg="/images/video-thumbs/{{video.image_id}}.jpg"></div>
                                 {% endif %}
@@ -231,7 +231,7 @@ title: MASK THE F UP!
                     </div>
 
             <!-- call to action / contact form modal button -->
-            <div class="page-section primary-bg dark-bg p-large">
+            <div class="page-section primary-bg dark-bg p-large" style="display:none;">
                 <div class="container">
                     <div class="section-title text-center">
                         <h2 class="title uppercase font-weight-400 display-2">Medical-Grade Masks</h2>
@@ -387,18 +387,11 @@ title: MASK THE F UP!
                     </div>
 
             <!-- call to action / contact form modal button -->
-            <div class="page-section primary-bg dark-bg p-large">
+            <div class="page-section primary-bg dark-bg p-large" style="display:none;">
                 <div class="container">
-                    <!-- <div class="section-title text-center">
-                        <h2 class="title uppercase font-weight-400 display-2 aos-init" data-aos="fade-in">Medical-Grade Masks</h2>
-                        <p>
-                            Message brought to you by <a href="https://supplyhawk.org">Supply Hawk</a>. Medical-grade masks are the only type shown <a href="https://www.nature.com/articles/s41591-020-0843-2">to reduce shedding of influenza</a>.<br /><br />
-                            Our masks are built for healthcare professionals and the general public, and we've kept our prices low to fight gouging. Unlike other masks, our masks have been tested by FDA-certified laboratories in the United States.
-                        </p>
-                    </div> -->
                     <div class="xs-clear-10">
                     </div>
-                    <div class="text-center aos-init" data-aos="fade-in">
+                    <div class="text-center">
                         <a href="https://supplyhawk.org/products/level-2-fluid-protection-procedure-mask" class="open-contact gt-btn primary-btn btn-lg alt-font uppercase" style="color: black !important">Buy Medical-Grade Masks Now</a>
                     </div>
                     <p class="text-center">
@@ -408,9 +401,10 @@ title: MASK THE F UP!
                     </p>
                 </div>
             </div>
-                    
+            <div class="xs-clear-10 xl-clear-25"></div>
                     <!-- section title -->
                     <div class="section-title text-center">
+                        
                         <h2 class="title uppercase font-weight-400 display-3 aos-init" data-aos="fade-in">Stop the Spread</h2>
                         <p>
                             Four things you can do to stop the spread.
@@ -430,7 +424,7 @@ title: MASK THE F UP!
                                         <div class="block-content">
                                             <h4 class="block-title uppercase">Wear a Mask</h4>
                                             <p class="element-text">
-                                                Just <a href="https://twitter.com/hashtag/WearADamnMask">#WearADamnMask</a>. It's easy, costs you little, and will help get our country back to work! <a href="https:/supplyhawk.org">Need some? Buy them!</a>
+                                                Just <a href="https://twitter.com/hashtag/WearADamnMask">#WearADamnMask</a>. It's easy, costs you little, and will help get our country back to work! <a href="https:/supplyhawk.org" style="display:none;">Need some? Buy them!</a>
                                             </p>
                                         </div>
                                     </div>
@@ -497,7 +491,7 @@ title: MASK THE F UP!
                             <p class="heading-font uppercase font-weight-700 aos-init" data-aos="fade-in">
                                 For the First Time in History, You Can Save Humanity By Watching The TV And Doing Nothing
                             </p>
-                            <cite class="alt-font uppercase">AND WEARING A MASK</cite>
+                            <cite class="alt-font uppercase">AND MASK UP</cite>
                         </blockquote>
                     </div>
                 </div>
@@ -513,8 +507,8 @@ title: MASK THE F UP!
                 <div class="container">
                     <!-- section title -->
                     <div class="section-title">
-                        <h5 class="sub-title uppercase dark-fill primary-el-bg aos-init" data-aos="fade-right">LAUGH AND SHARE</h5>
-                        <h2 class="title uppercase font-weight-700 aos-init" data-aos="fade-in">TOP MEMES AND IMAGES</h2>
+                        <h5 class="sub-title uppercase dark-fill primary-el-bg">LAUGH AND SHARE</h5>
+                        <h2 class="title uppercase font-weight-700">TOP MEMES AND IMAGES</h2>
                         <p>
                             Top images and memes from the <a href="https://twitter.com/hashtag/MaskUp">#MaskUp</a> movement.
                         </p>
@@ -548,10 +542,10 @@ title: MASK THE F UP!
             <!-- blog section -->
 
             <!-- call to action / contact form modal button -->
-            <div id="which-mask" class="page-section primary-bg dark-bg p-large">
+            <div id="which-mask" class="page-section primary-bg dark-bg p-large" style="display:none;">
                 <div class="container">
                     <div class="section-title text-center">
-                        <h2 class="title uppercase font-weight-400 display-2 aos-init" data-aos="fade-in">Which Masks Work?</h2>
+                        <h2 class="title uppercase font-weight-400 display-2">Which Masks Work?</h2>
                         <p>
                             While fabric masks provide some protection, by and large <a href="https://supplyhawk.org">medical-grade masks</a> are the only type shown <a href="https://www.nature.com/articles/s41591-020-0843-2">to reduce shedding of influenza</a>.<br /><br />
                             Purchase a bonafide medical mask from <a href="https://supplyhawk.org">Supply Hawk</a>. Our masks are built for healthcare professionals and the general public, and we've kept our prices low to fight gouging. Unlike other masks, our masks have been tested by FDA-certified laboratories in the United States.
@@ -559,7 +553,7 @@ title: MASK THE F UP!
                     </div>
                     <div class="xs-clear-10">
                     </div>
-                    <div class="text-center aos-init" data-aos="fade-in">
+                    <div class="text-center">
                         <a href="https://supplyhawk.org/products/level-2-fluid-protection-procedure-mask" class="open-contact gt-btn primary-btn btn-lg alt-font uppercase" style="color: black !important">Buy Now</a>
                     </div>
                     <p class="text-center">
@@ -612,7 +606,7 @@ title: MASK THE F UP!
 
     <!-- Page Footer
         ======================================= -->
-    <footer class="site-footer black-bg dark-bg">
+    <footer class="site-footer black-bg dark-bg" style="display:none;">
     <div class="container container-lg aos-init" data-aos="fade-in" data-aos-delay="100">
         
         <div class="widget">
@@ -652,7 +646,7 @@ title: MASK THE F UP!
                     <span class="front">Amazon</span>
                     <span class="back"><span>Amazon</span></span>
                 </a>
-                <a href="https://supplyhawk.org/products/level-2-fluid-protection-procedure-mask">
+                <a href="https://supplyhawk.org/products/level-2-fluid-protection-procedure-mask" style="display:none;">
                 <span class="front">Buy Now</span>
                 <span class="back"><span>Buy Now</span></span>
                 </a>
